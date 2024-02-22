@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'arial';
+}
+
+.conteiner {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.cabecalho {
+    background-color: dimgray;
+    padding: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: 10px 0px 10px #2c2c2c;
+
+}
+
+.cabecalho>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+.logo {
+    color: rgb(69, 51, 203);
+
+}
+
+.logo span {
+    color:brown;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    position: relative;
+}
+
+.foto {
+    display: flex;
+    align-items: center;
+}
+
+.foto img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.foto img:first-child {
+    margin-right: 16px;
+
+}
+
+nav ul li {
+    color: white;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.menu-button {
+    display: none;
+}
+
+
+header {
+    background-image: radial-gradient(#efff, #c7c7c7);
+}
+
+.container-baixo {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 15px;
+}
+
+.container-esquerdo {
+    height: 100%;
+    flex-basis: 50%;
+}
+
+.container-esquerdo h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.container-esquerdo p {
+    line-height: 20px;
+    margin-bottom: 15px;
+}
+
+.container-esquerdo button {
+    background-color:mediumblue;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 35px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.container-esquerdo button:hover {
+    background-color:brown;
+
+}
+
+
+.container-direito img {
+    width: 100%;
+   
+}
+
+@media (max-width: 1000px) {
+    .logo {
+        font-size: 20px;
+
+ }
+
+    .menu-button {
+        display:block;
+    }
+
+ .container-baixo {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 65px;
+    }
+
+    .cabecalho {
+        position: absolute;
+        background-color: #2c2c2c;
+        width: 100%;
+       
+      
+       
+    }
+
+    .show-menu {
+        display: block;
+
+    }
+
+
+    nav ul {
+        flex-direction: column;
+    }
+
+
+    nav ul li {
+        text-align: center;
+        padding: 10px;
+ }
+
+}
+
+main {
+    background-color:rgb(177, 171, 171);
+}
+
+.gray-background {
+    background-color: rgb(69, 66, 66);
+}
+.page-inner-contend {
+    max-width: 1280px;
+    margin: 0 auto;
+   
+}
+.cols {
+    display: grid;
+    padding: 50px 10px;
+    justify-content: space-evenly;
+    
+
+}
+.cols-3 {
+   grid-template-columns: repeat(3, 1fr);
+   gap: 45px;
+}
+
+.cols-3 img {
+    max-width: 100%;
+}
+
+.cols-4 img{
+    max-width: 100%;
+}
+
+.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    
+}
+
+.cols>* {
+    cursor: pointer;
+    transition: all 0.3s;
+    
+}
+
+.cols>*:hover {
+    transform: translateY(-5px);
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 25px;
+
+}
+
+.subtitle-underline {
+    width: 100px;
+    height: 5px;
+    background: mediumblue;
+    border-radius: 10px;
+    margin: 8px auto 0 auto;
+}
+
+.product{
+    color:darkred;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.product-name {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.rate {
+    color:rgb(255, 230, 0);
+    font-size: 20px;
+}
+
+.product-price {
+    color: black;
+    font-weight: bold;
+}
+
+
+.product1 {
+    color:darkred;
+}
+
+.exclusive-container{
+    color:white;
+    flex-direction: row-reverse;
+    padding-left: 55px 15px;
+}
+
+exclusive-container img{
+    max-width: 500px;
+    
+}
+
+@media (max-width: 800px){
+    .section-title{
+       font-size: 15px;
+    }
+
+    .cols-3 {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .cols-4 {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+
+
+    .product-name, .product-price .rate{
+        max-height: 15px;
+        overflow: hidden;
+        font-size: 13px;
+
+
+    }
+    .exclusive-container {
+        flex-direction: column-reverse;
+    }
+
+    .exclusive-container img {
+        margin-bottom: 40px;
+    }
+
+    .exclusive-container p {
+        gap: 10px;
+       
+    }
+}
+
+
+.testimonials {
+    display: flex;
+    padding: 55px;
+    justify-content: space-evenly;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 30%;
+    text-align: center;
+    box-shadow: 0 0 15px;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 30px;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial p {
+    margin: 6px 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.testimonial p:first-child {
+    font-weight: bold;
+    font-size: 70px;
+    color:blue;
+    margin-top: 30px;
+    line-height: 25px;
+}
+
+
+@media (max-width: 800px){
+    .testimonials {
+        flex-direction: column;
+    }
+
+    .testimonia {
+        margin-bottom: 18px;
+    }
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    color:rgb(204, 191, 191);
+    padding: 55px 15px;
+    gap: 25px;
+    justify-content: space-evenly;
+}
+
+.download-options>* {
+      margin: 15px 0;
+
+}
+.download-options>p:first-child {
+    font-weight: bold;
+    color:black;
+}
+.download-options>div{
+    display: flex;
+    
+}
+.download-options>div img{
+    width: 180px;
+    border-radius: 10px;
+}
+
+.logo-footer {
+    text-align: center;
+
+}
+.links-footer h3 {
+    color:black;
+    margin-bottom: 8px;
+}
+
+.links-footer ul{
+    list-style: none;
+}
+
+.links-footer ul li{
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.copyright {
+    color:white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+
+@media (max-width: 800px) {
+     .footer-content> {
+        display: inline;
+        font-size: 10px;
+     }
+
+     .footer-content>div {
+        padding: 15px;
+     }
+
+     .download-options>div{
+        display: inline;
+     }
+
+     .download-options>div img {
+        width: 120px;
+     }
+
+     .copyright {
+        font-size: 10px;
+     }
+
+
+}
+
+
+
+
+
+
+
+
+
+

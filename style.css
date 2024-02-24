@@ -26,7 +26,22 @@ body {
 
 }
 
-.cabecalho>div {
+.cabecalho {
+    display: none;
+    padding: 10px;
+}
+
+.cabecalho.show-menu {
+    display: block;
+}
+
+.cabecalho.esconder-menu {
+    display: none;
+}
+
+
+
+.cabecalho div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,7 +55,7 @@ body {
 }
 
 .logo span {
-    color:brown;
+    color: brown;
 }
 
 nav ul {
@@ -78,7 +93,7 @@ nav ul li:hover {
 }
 
 .menu-button {
-    display: none;
+    display: block;
 }
 
 
@@ -109,7 +124,7 @@ header {
 }
 
 .container-esquerdo button {
-    background-color:mediumblue;
+    background-color: mediumblue;
     border-radius: 20px;
     border: none;
     cursor: pointer;
@@ -120,27 +135,60 @@ header {
 }
 
 .container-esquerdo button:hover {
-    background-color:brown;
+    background-color: brown;
 
 }
 
 
 .container-direito img {
     width: 100%;
-   
+
+}
+
+/* Para larguras de tela maiores ou iguais a 1000px, exibe o cabeçalho */
+@media (min-width: 1001px) {
+    .cabecalho.show-menu {
+        display: block;
+    }
+
+    .menu-button {
+        display: none;
+        z-index: 0;
+    }
+
+    .ver_menu{
+        display: none;
+    }
 }
 
 @media (max-width: 1000px) {
     .logo {
         font-size: 20px;
 
- }
-
-    .menu-button {
-        display:block;
     }
 
- .container-baixo {
+    .ver_menu{
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .show-menu {
+        display: block;
+    }
+
+
+
+
+    .cabecalho.show-menu {
+        display: none;
+    }
+
+
+
+    .container-baixo {
         flex-direction: column;
         text-align: center;
         padding-top: 65px;
@@ -150,15 +198,12 @@ header {
         position: absolute;
         background-color: #2c2c2c;
         width: 100%;
-       
-      
-       
+        margin-bottom: 200px;
     }
 
-    .show-menu {
-        display: block;
 
-    }
+
+    
 
 
     nav ul {
@@ -169,52 +214,55 @@ header {
     nav ul li {
         text-align: center;
         padding: 10px;
- }
+    }
 
 }
 
 main {
-    background-color:rgb(177, 171, 171);
+    background-color: rgb(177, 171, 171);
 }
 
 .gray-background {
     background-color: rgb(69, 66, 66);
 }
+
 .page-inner-contend {
     max-width: 1280px;
     margin: 0 auto;
-   
+
 }
+
 .cols {
     display: grid;
     padding: 50px 10px;
     justify-content: space-evenly;
-    
+
 
 }
+
 .cols-3 {
-   grid-template-columns: repeat(3, 1fr);
-   gap: 45px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
 }
 
 .cols-3 img {
     max-width: 100%;
 }
 
-.cols-4 img{
+.cols-4 img {
     max-width: 100%;
 }
 
 .cols-4 {
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
-    
+
 }
 
 .cols>* {
     cursor: pointer;
     transition: all 0.3s;
-    
+
 }
 
 .cols>*:hover {
@@ -236,8 +284,8 @@ main {
     margin: 8px auto 0 auto;
 }
 
-.product{
-    color:darkred;
+.product {
+    color: darkred;
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
@@ -250,7 +298,7 @@ main {
 }
 
 .rate {
-    color:rgb(255, 230, 0);
+    color: rgb(255, 230, 0);
     font-size: 20px;
 }
 
@@ -261,42 +309,44 @@ main {
 
 
 .product1 {
-    color:darkred;
+    color: darkred;
 }
 
-.exclusive-container{
-    color:white;
+.exclusive-container {
+    color: white;
     flex-direction: row-reverse;
     padding-left: 55px 15px;
 }
 
-exclusive-container img{
+exclusive-container img {
     max-width: 500px;
-    
+
 }
 
-@media (max-width: 800px){
-    .section-title{
-       font-size: 15px;
+@media (max-width: 800px) {
+    .section-title {
+        font-size: 15px;
     }
 
     .cols-3 {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .cols-4 {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
 
 
-    .product-name, .product-price .rate{
+    .product-name,
+    .product-price .rate {
         max-height: 15px;
         overflow: hidden;
         font-size: 13px;
 
 
     }
+
     .exclusive-container {
         flex-direction: column-reverse;
     }
@@ -307,7 +357,7 @@ exclusive-container img{
 
     .exclusive-container p {
         gap: 10px;
-       
+
     }
 }
 
@@ -346,13 +396,13 @@ exclusive-container img{
 .testimonial p:first-child {
     font-weight: bold;
     font-size: 70px;
-    color:blue;
+    color: blue;
     margin-top: 30px;
     line-height: 25px;
 }
 
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
     .testimonials {
         flex-direction: column;
     }
@@ -365,25 +415,28 @@ exclusive-container img{
 .footer-content {
     display: flex;
     align-items: center;
-    color:rgb(204, 191, 191);
+    color: rgb(204, 191, 191);
     padding: 55px 15px;
     gap: 25px;
     justify-content: space-evenly;
 }
 
 .download-options>* {
-      margin: 15px 0;
+    margin: 15px 0;
 
 }
+
 .download-options>p:first-child {
     font-weight: bold;
-    color:black;
+    color: black;
 }
-.download-options>div{
+
+.download-options>div {
     display: flex;
-    
+
 }
-.download-options>div img{
+
+.download-options>div img {
     width: 180px;
     border-radius: 10px;
 }
@@ -392,58 +445,49 @@ exclusive-container img{
     text-align: center;
 
 }
+
 .links-footer h3 {
-    color:black;
+    color: black;
     margin-bottom: 8px;
 }
 
-.links-footer ul{
+.links-footer ul {
     list-style: none;
 }
 
-.links-footer ul li{
+.links-footer ul li {
     margin-bottom: 5px;
     cursor: pointer;
 }
 
 .copyright {
-    color:white;
+    color: white;
     padding: 15px 0;
     text-align: center;
 }
 
 
 @media (max-width: 800px) {
-     .footer-content> {
+    .footer-content> {
         display: inline;
         font-size: 10px;
-     }
+    }
 
-     .footer-content>div {
+    .footer-content>div {
         padding: 15px;
-     }
+    }
 
-     .download-options>div{
+    .download-options>div {
         display: inline;
-     }
+    }
 
-     .download-options>div img {
+    .download-options>div img {
         width: 120px;
-     }
+    }
 
-     .copyright {
+    .copyright {
         font-size: 10px;
-     }
+    }
 
 
 }
-
-
-
-
-
-
-
-
-
-
